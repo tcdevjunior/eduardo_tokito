@@ -7,6 +7,7 @@ var divResposta = document.getElementById("resposta")
 var divContador = document.getElementById("contador")
 var numero_sorteado = sorteiaNumero(1, 100);
 var contador = 0
+console.log(numero_sorteado);
 
 function verificaNumero(chute, numero_sorteado) {
 
