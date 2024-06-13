@@ -2,6 +2,7 @@ function sorteiaNumero(min, max) {
     return parseInt(Math.random() * max) + min
 }
 
+
 var divResposta = document.getElementById("resposta")
 var divContador = document.getElementById("contador")
 var numero_sorteado = sorteiaNumero(1, 100);
@@ -28,12 +29,14 @@ function verificaNumero(chute, numero_sorteado) {
     }
 }
 
+    var listaDeJogadores=[]
+
 function enter() {
 
     var chute = document.getElementById("chute").value
     contador++
 
-    while (contador <= 5) {
+    while (contador <= 5 && chute!= numero_sorteado) {
         verificaNumero(chute, numero_sorteado)
 
         divContador.innerHTML = ""
@@ -48,10 +51,30 @@ function enter() {
     }
 
     divResposta.innerHTML = ""
+    let nome= document.getElementById("nome").value
 
-    divResposta.innerHTML += `
+    if(chute != numero_sorteado){
+        divResposta.innerHTML += `
         <p>Voce perdeu ! o numero era ${numero_sorteado}</p>
     `
+    }else{
+        listaDeJogadores.push({ nome, contador})
+
+        for(let i = 0; i < listaDeJogadores.length; i++){
+            divTabela.innerHTML += `
+            <table>
+                    <tbody>
+                        <tr>
+                            <th>${listaDeJogadores[i].nome}</th>
+                            <th>${listaDeJogadores[i].contador}</th>
+                        </tr>
+                    </tbody>
+                </table>
+            `
+        }
+    }
+
+    
     return false
 
 }

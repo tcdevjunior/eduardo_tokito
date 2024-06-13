@@ -13,6 +13,11 @@
 
 <body>
     <form onsubmit="return enter()">
+        <label for="nome">
+            <span>Nome:</span>
+            <input type="text" name="nome" id="nome">
+        </label>
+
         <label for="chute">
             <span>Tente acertar o numero sorteado...</span>
             <input placeholder="Tente acerta o número" class="input" name="chute" id="chute" type="number">
@@ -27,6 +32,8 @@
 
     <div id="resposta"></div>
     <div id="contador"></div>
+
+    <div id="divTabela"></div>
 </body>
 
 </html>
