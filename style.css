@@ -1,0 +1,119 @@
+ * {
+    margin: 0;
+    padding: 0;
+ }
+
+ body {
+    box-sizing: border-box;
+    background: linear-gradient(#4cc9f0, #4895ef);
+    height: 100vh;
+ }
+
+ form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    gap: 20px;
+ }
+
+ label {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+ }
+
+ button {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+       "Liberation Mono", "Courier New", monospace;
+    font-size: 17px;
+    padding: 1em 2.7em;
+    font-weight: 500;
+    background: #ba181b;
+    color: #370617;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.6em;
+    cursor: pointer;
+ }
+
+ .gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 0.6em;
+    margin-top: -0.25em;
+    background-image: linear-gradient(rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 0.3));
+ }
+
+ .label {
+    position: relative;
+    top: -1px;
+ }
+
+ .transition {
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    transition-duration: 500ms;
+    background-color: #6c757d(16, 185, 129, 0.6);
+    border-radius: 9999px;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+ }
+
+ button:hover .transition {
+    width: 14em;
+    height: 14em;
+ }
+
+ button:active {
+    transform: scale(0.97);
+ }
+
+ .input {
+    margin: 30px;
+    background: none;
+    border: none;
+    outline: none;
+    max-width: 190px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 9999px;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+    color: #6a040f;
+ }
+
+ label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 24px;
+    text-align: center;
+ }
+
+ #resposta,
+ #contador {
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+ #resposta p,
+ #contador p {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 24px;
+    text-align: center;
+ }
