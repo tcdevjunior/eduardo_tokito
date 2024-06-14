@@ -2,11 +2,11 @@ function sorteiaNumero(min, max) {
     return parseInt(Math.random() * max) + min
 }
 
-
 var divResposta = document.getElementById("resposta")
 var divContador = document.getElementById("contador")
-var numero_sorteado = sorteiaNumero(1, 100);
+var numero_sorteado = sorteiaNumero(1, 500);
 var contador = 0
+
 console.log(numero_sorteado);
 
 function verificaNumero(chute, numero_sorteado) {
@@ -30,14 +30,14 @@ function verificaNumero(chute, numero_sorteado) {
     }
 }
 
-    var listaDeJogadores=[]
+var listaDeJogadores = []
 
 function enter() {
 
     var chute = document.getElementById("chute").value
     contador++
 
-    while (contador <= 5 && chute!= numero_sorteado) {
+    while (contador <= 10 && chute != numero_sorteado) {
         verificaNumero(chute, numero_sorteado)
 
         divContador.innerHTML = ""
@@ -46,22 +46,22 @@ function enter() {
             <p>Quantidade de chutes: ${contador}</p>
         `
 
-        document.getElementById("chute").value=""
+        document.getElementById("chute").value = ""
 
         return false
     }
 
     divResposta.innerHTML = ""
-    let nome= document.getElementById("nome").value
+    let nome = document.getElementById("nome").value
 
-    if(chute != numero_sorteado){
+    if (chute != numero_sorteado) {
         divResposta.innerHTML += `
         <p>Voce perdeu ! o numero era ${numero_sorteado}</p>
     `
-    }else{
-        listaDeJogadores.push({ nome, contador})
+    } else {
+        listaDeJogadores.push({ nome, contador })
 
-        for(let i = 0; i < listaDeJogadores.length; i++){
+        for (let i = 0; i < listaDeJogadores.length; i++) {
             divTabela.innerHTML += `
             <table>
                     <tbody>
@@ -75,7 +75,12 @@ function enter() {
         }
     }
 
-    
     return false
 
+}
+
+function geraNovoNumero() {
+    numero_sorteado = sorteiaNumero(1, 100)
+    contador = 0
+    console.log(numero_sorteado);
 }
